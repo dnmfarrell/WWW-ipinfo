@@ -32,7 +32,7 @@ BEGIN {
 
 =head2 get_ipinfo
 
-Returns a hashref containing your ip and geolocation data:
+Returns a hashref containing ip and geolocation data. Optionally you can provide an ip address argument to get a hashref for an IP that is not your own. Works with IPv4 and IPv6 addresses.
 
     {
       ip        => "198.115.6.53",
@@ -49,17 +49,23 @@ Example
 
     use WWW::ipinfo;
 
-    my $ipinfo = get_ipinfo();
-    my $ip = $ipinfo->{ip};
+    my $ipinfo = get_ipinfo(); # get IP info for your IP address
+    my $ip = $ipinfo->{ip}; # your IP address
+
+    my $other_ipinfo = get_ipinfo('FE80::0202:B3FF:FE1E:8329'); #works with IPv6 addresses
+    my $country = $other_ipinfo->{country};
 
 =cut
 
+
 sub get_ipinfo {
-    my $response = HTTP::Tiny->new->get('http://ipinfo.io/json');
+    my $ip = shift;
+    my $url = $ip ? "http://ipinfo.io/$ip/json" : "http://ipinfo.io/json";
+    my $response = HTTP::Tiny->new->get($url);
     die join(' ', 'Error fetching ip: ',
                   ($response->{status} or ''),
                   ($response->{reason} or '')) unless $response->{success};
-   decode_json($response->{content}); 
+   decode_json($response->{content});
 }
 
 =head1 SEE ALSO
