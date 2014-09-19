@@ -9,9 +9,8 @@ ok my $info = get_ipinfo(), 'get_ipinfo works';
 like $info->{ip}, qr/^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$/,
     'ip address in expected format';
 
-ok exists $info->{city}, 'has city';
-ok exists $info->{region}, 'has region';
-ok exists $info->{postal}, 'has postal';
+# other parameters like postal code, region are not always provided by ipinfo
+ok exists $info->{ip}, 'has ip';
 ok exists $info->{country}, 'has country';
 
 done_testing();

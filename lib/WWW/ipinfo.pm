@@ -62,4 +62,10 @@ sub get_ipinfo {
    decode_json($response->{content}); 
 }
 
+=head1 SEE ALSO
+
+L<WWW::curlmyip> - a similar module that returns your ip address
+
+=cut
+
 1;

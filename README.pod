@@ -8,7 +8,7 @@ WWW::ipinfo - Returns your ip address and geolocation data using L<http://ipinfo
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -44,6 +44,10 @@ Example
 
     my $ipinfo = get_ipinfo();
     my $ip = $ipinfo->{ip};
+
+=head1 SEE ALSO
+
+L<WWW::curlmyip> - a similar module that returns your ip address
 
 =head1 AUTHOR
 
