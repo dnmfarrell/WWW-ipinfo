@@ -72,6 +72,16 @@ sub get_ipinfo {
 
 L<WWW::curlmyip> - a similar module that returns your ip address
 
+L<WWW::hmaip> - a similar module that returns your ip address
+
+L<WWW::IP> - a module that uses up to 3 services to retrieve your IP address
+
+=cut
+
+=head1 CONTRIBUTORS
+
+Jon D Jones III
+
 =cut
 
 1;

@@ -1,5 +1,8 @@
 Revision history for WWW::ipinfo
 
+0.04    2014-09-19
+        -Updated POD
+
 0.03    2014-09-18
         -Updated get_ipinfo method to accept optional ip address argument see https://rt.cpan.org/Public/Bug/Display.html?id=98975
 
