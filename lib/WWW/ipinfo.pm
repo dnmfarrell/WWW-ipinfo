@@ -80,7 +80,7 @@ L<WWW::IP> - a module that uses up to 3 services to retrieve your IP address
 
 =head1 CONTRIBUTORS
 
-Jon D Jones III
+John D Jones III
 
 =cut
 

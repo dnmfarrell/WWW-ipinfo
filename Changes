@@ -1,5 +1,8 @@
 Revision history for WWW::ipinfo
 
+0.05    2014-10-14
+        -Updated POD; contributor name correction
+
 0.04    2014-09-19
         -Updated POD
 
